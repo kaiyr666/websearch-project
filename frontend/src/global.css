@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Claude-like "Warm" Palette */
+        /* Background: A soft, warm off-white/cream for light mode feel, or warm gray for dark. 
+       Let's go with a sophisticated "Warm Dark" as it's often preferred for devs. 
+    */
+        --background: 30 5% 5%;
+        /* #0D0C0B (Very Dark Warm Gray) */
+        --foreground: 30 10% 90%;
+        /* #EBE5E0 (Warm White) */
+
+        --card: 30 4% 10%;
+        /* #1A1918 */
+        --card-foreground: 30 10% 90%;
+
+        --primary: 27 30% 55%;
+        /* Muted Terracotta/Clay (Classic Claude Accent) */
+        --primary-foreground: 0 0% 100%;
+
+        --secondary: 40 5% 15%;
+        /* Lighter Warm Gray */
+        --secondary-foreground: 30 10% 85%;
+
+        --muted: 40 5% 20%;
+        --muted-foreground: 30 5% 60%;
+
+        --border: 40 5% 20%;
+        --input: 40 5% 20%;
+
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+        font-family: 'Inter', sans-serif;
+        /* Body font */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Serif Headings for that "Editorial" Claude feel */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .font-serif {
+        font-family: 'Merriweather', serif;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-white/10 rounded-full hover:bg-white/20 transition-colors;
+    }
+}
+
+@layer components {
+    .claude-input {
+        @apply bg-[#1F1E1D] border border-white/5 rounded-xl shadow-sm focus-within:ring-1 focus-within:ring-[#D97757]/50 focus-within:border-[#D97757]/50 transition-all;
+    }
+
+    .claude-card {
+        @apply bg-[#1A1918] border border-white/5 rounded-lg p-5 hover:border-[#D97757]/30 transition-colors duration-300;
+    }
+
+    .claude-button {
+        @apply bg-[#D97757] text-white hover:bg-[#C26649] transition-colors rounded-lg px-4 py-2 font-medium shadow-sm;
+    }
+}

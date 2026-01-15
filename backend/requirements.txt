@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+python-multipart
+pypdf
+openai
+google-search-results
+python-dotenv
+httpx
+aiosqlite
