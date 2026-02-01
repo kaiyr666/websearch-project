@@ -111,5 +111,3 @@ Create a `.env` file in the `backend/` directory with the following keys:
 | `JINA_API_KEY` | Key for Jina Reader content extraction. |
 | `SYSTEM_PROMPT` | (Optional) Custom tuning for the AI agent. |
 
----
-*Created with ❤️ for nFactorial practice.*
